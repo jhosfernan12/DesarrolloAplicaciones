@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Registro (sin JS)</title>
+  <link rel="stylesheet" href="Ejercicio2.css">
+</head>
+<body>
+  <main class="card">
+    <h1>Crear cuenta</h1>
+
+
+    <form action="#" method="post">
+      <div class="campo">
+        <label for="nombre">Nombre y apellido</label>
+        <input id="nombre" name="nombre" type="text"
+               required minlength="2" maxlength="40"
+               placeholder="Ej: Janitza Tapia"
+               title="Entre 2 y 40 caracteres.">
+        <small class="hint">Entre 2 y 40 caracteres.</small>
+        <small class="error">Revisa el nombre (mín. 2, máx. 40).</small>
+      </div>
+
+
+      <div class="campo">
+        <label for="usuario">Usuario</label>
+        <input id="usuario" name="usuario" type="text"
+               required minlength="4" maxlength="16"
+               placeholder="Ej: jani_2025"
+               title="Entre 4 y 16 caracteres.">
+        <small class="hint">Entre 4 y 16 caracteres.</small>
+        <small class="error">Debe tener de 4 a 16 caracteres.</small>
+      </div>
+
+
+      <div class="campo">
+        <label for="email">Correo electrónico</label>
+        <input id="email" name="email" type="email"
+               required placeholder="tucorreo@dominio.com"
+               title="Ej: jani@gmail.com">
+        <small class="hint">Ej: nombre@dominio.com</small>
+        <small class="error">Correo inválido.</small>
+      </div>
+
+
+      <div class="campo">
+        <label for="tel">Teléfono (opcional)</label>
+        <input id="tel" name="telefono" type="tel"
+               minlength="9" maxlength="15"
+               placeholder="Solo números (9–15)"
+               title="Debe tener entre 9 y 15 dígitos">
+        <small class="hint">Opcional, entre 9 y 15 números.</small>
+        <small class="error">Debe tener 9–15 números.</small>
+      </div>
+
+
+      <div class="campo">
+        <label for="pass">Contraseña</label>
+        <input id="pass" name="password" type="password"
+               required minlength="8" maxlength="32"
+               placeholder="Mín. 8 caracteres"
+               title="Entre 8 y 32 caracteres">
+        <small class="hint">Debe tener entre 8 y 32 caracteres.</small>
+        <small class="error">Contraseña no válida.</small>
+      </div>
+
+
+      <label class="check">
+        <input id="terminos" name="terminos" type="checkbox" required>
+        Acepto los terminos y condiciones
+      </label>
+
+
+      <button type="submit">Crear cuenta</button>
+    </form>
+  </main>
+</body>
+</html>
