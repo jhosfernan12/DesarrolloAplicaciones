@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agujeros Negros — Capas y Estructura</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="video-bg" aria-hidden="true">
+    <video autoplay muted loop playsinline>
+      <source src="media/video.mp4" type="video/mp4" />
+    </video>
+  </div>
+  <div class="overlay"></div>
+
+  <header class="glass">
+    <h1 class="logo">Agujeros<span>Negros</span></h1>
+    <nav aria-label="Navegación principal">
+      <ul class="nav">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="origen.html">Origen</a></li>
+        <li><a href="tipos.html">Tipos</a></li>
+        <li><a href="capas.html" class="activo">Capas</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="contenido" class="contenido-detalle">
+    <article class="glass anim-fade">
+      <h2>Capas y Estructura de un Agujero Negro</h2>
+      <p class="intro">Los agujeros negros no son simples "hoyos" en el espacio, sino objetos complejos con distintas regiones y características fascinantes. Conoce las partes que componen estos misteriosos objetos cósmicos.</p>
+
+      <div class="capas-diagrama">
+        <img src="media/capas.jpg" alt="Diagrama de las capas de un agujero negro" class="diagrama-img" />
+      </div>
+
+      <div class="tipo-detalle" id="ergosfera">
+        <div class="tipo-header">
+          <h3>Ergosfera</h3>
+          <span class="tipo-tag">Región exterior de rotación</span>
+        </div>
+        <div class="tipo-content">
+          <div class="tipo-info">
+            <p>La ergosfera es una región elipsoidal que rodea el horizonte de eventos en agujeros negros rotatorios (de Kerr). En esta zona, el espacio-tiempo mismo es arrastrado por la rotación del agujero negro.</p>
+            <ul class="list">
+              <li>Se encuentra fuera del horizonte de eventos</li>
+              <li>Todo objeto dentro de esta región debe moverse en la dirección de rotación del agujero negro</li>
+              <li>Es posible entrar y salir de la ergosfera (a diferencia del horizonte de eventos)</li>
+              <li>Teóricamente, se podría extraer energía de esta región (proceso de Penrose)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="tipo-detalle" id="disco-acrecion">
+        <div class="tipo-header">
+          <h3>Disco de Acreción</h3>
+          <span class="tipo-tag">Materia en rotación</span>
+        </div>
+        <div class="tipo-content">
+          <div class="tipo-info">
+            <p>El disco de acreción es una estructura formada por material que orbita alrededor del agujero negro. Consiste principalmente en gas, polvo y otros restos estelares que son atraídos por la intensa gravedad.</p>
+            <ul class="list">
+              <li>La materia se calienta enormemente por la fricción, emitiendo radiación (rayos X)</li>
+              <li>Estos discos pueden alcanzar temperaturas de millones de grados</li>
+              <li>Su observación permite detectar agujeros negros aunque no emitan luz propia</li>
+              <li>En agujeros negros supermasivos, los discos de acreción alimentan los cuásares</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="tipo-detalle" id="horizonte-eventos">
+        <div class="tipo-header">
+          <h3>Horizonte de Eventos</h3>
+          <span class="tipo-tag">Punto de no retorno</span>
+        </div>
+        <div class="tipo-content">
+          <div class="tipo-info">
+            <p>El horizonte de eventos es la "superficie" invisible que marca el punto de no retorno alrededor de un agujero negro. Una vez que la materia o la luz cruzan este límite, no pueden escapar de la atracción gravitatoria.</p>
+            <ul class="list">
+              <li>No es una superficie física, sino una frontera en el espacio-tiempo</li>
+              <li>Su tamaño depende de la masa del agujero negro (radio de Schwarzschild)</li>
+              <li>Para un agujero negro de masa solar, el horizonte tiene aproximadamente 3 km de radio</li>
+              <li>Desde fuera, nunca podemos observar lo que ocurre dentro del horizonte de eventos</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="tipo-detalle" id="singularidad">
+        <div class="tipo-header">
+          <h3>Singularidad</h3>
+          <span class="tipo-tag">Núcleo infinitamente denso</span>
+        </div>
+        <div class="tipo-content">
+          <div class="tipo-info">
+            <p>En el corazón del agujero negro se encuentra la singularidad, un punto de densidad infinita donde las leyes de la física conocida dejan de funcionar. Aquí, el espacio-tiempo se curva de manera extrema.</p>
+            <ul class="list">
+              <li>Región donde toda la masa del agujero negro está comprimida en un punto de volumen cero</li>
+              <li>Las ecuaciones de la Relatividad General predicen su existencia pero no pueden describirla</li>
+              <li>Se cree que una teoría de gravedad cuántica podría explicar lo que ocurre en la singularidad</li>
+              <li>En agujeros negros rotatorios, la singularidad puede tener forma de anillo</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="curiosidad">
+        <h3>¿Sabías que?</h3>
+        <p>El término "agujero negro" fue popularizado por el físico John Wheeler en 1967, pero la idea se remonta a más de dos siglos atrás. El horizonte de eventos fue conceptualizado por primera vez por el físico alemán Karl Schwarzschild en 1916, poco después de que Einstein publicara su teoría de la relatividad general.</p>
+      </div>
+
+      <div class="botones">
+        <a class="btn ghost" href="index.html">Volver al Inicio</a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="glass anim-fade">
+    <p>© 2025 — Proyecto Agujeros Negros | Fernando Pacheco</p>
+  </footer>
+</body>
+</html>
