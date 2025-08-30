@@ -1,0 +1,59 @@
+body {
+  background-color: rgb(255, 240, 245);
+  font-family: "Segoe UI", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: linear-gradient(to right, rgb(255,182,193), rgb(173,216,230));
+  padding: 20px;
+  text-align: center;
+  color: white;
+  font-size: 2em;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 30px;
+}
+
+section {
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+section:hover { transform: scale(1.05); }
+
+.cuadro {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 15px;
+  border-radius: 15px;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+}
+
+/* Colores en RGB */
+.rosa { background-color: rgb(255,182,193); }
+.fucsia { background-color: rgb(255,20,147); }
+.azul { background-color: rgb(65,105,225); }
+.azul-oscuro { background-color: rgb(0,0,128); }
+.cielo { background-color: rgb(135,206,235); }
+.aqua { background-color: rgb(0,255,255); }
+.celeste { background-color: rgb(173,216,230); }
+
+footer {
+  background: linear-gradient(to right, rgb(255,182,193), rgb(135,206,250));
+  text-align: center;
+  padding: 15px;
+  font-weight: bold;
+  color: #333;
+  border-top: 2px solid #ddd;
+}
