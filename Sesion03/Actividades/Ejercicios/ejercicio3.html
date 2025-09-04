@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ejercicio 3</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #000;
+      color: #d0aaff;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #0d001a;
+      padding: 15px 20px;
+      box-shadow: 0 0 10px #8000ff;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #d0aaff;
+      text-shadow: 0 0 10px #9f00ff, 0 0 20px #8000ff;
+    }
+
+    .menu {
+      display: flex;
+      gap: 20px;
+    }
+
+    .menu a {
+      color: #d0aaff;
+      text-decoration: none;
+      padding: 8px;
+      transition: background 0.3s;
+      text-shadow: 0 0 5px #8000ff, 0 0 10px #c47aff;
+    }
+
+    .menu a:hover {
+      background-color: #1a001f;
+      border-radius: 5px;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      height: 3px;
+      width: 25px;
+      background: #d0aaff;
+      margin: 4px 0;
+      box-shadow: 0 0 5px #8000ff;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    main h1 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      text-shadow: 0 0 8px #9f00ff, 0 0 15px #8000ff;
+      text-align: center;
+    }
+
+    main p {
+      font-size: 1.1rem;
+      color: #e6ccff;
+      text-shadow: 0 0 5px #9933ff;
+      text-align: center;
+    }
+
+    /* GRID de juegos */
+    .grid-juegos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .juego {
+      background-color: #14001a;
+      padding: 15px;
+      border: 1px solid #8000ff;
+      box-shadow: 0 0 15px #8000ff;
+      text-align: center;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .juego:hover {
+      transform: scale(1.05);
+    }
+
+    .juego img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      box-shadow: 0 0 10px #8000ff;
+    }
+
+    .juego h2 {
+      font-size: 1.3rem;
+      color: #e6ccff;
+      text-shadow: 0 0 5px #9f00ff, 0 0 10px #d0aaff;
+    }
+
+    .juego p {
+      font-size: 15px;
+      color: #c47aff;
+      text-shadow: 0 0 3px #8000ff;
+    }
+
+    .juego a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Breakpoint <= 900px */
+    @media (max-width: 900px) {
+      .menu {
+        gap: 15px;
+      }
+    }
+
+    /* Breakpoint <= 480px */
+    @media (max-width: 480px) {
+      .menu {
+        display: none;
+        flex-direction: column;
+        background-color: #0d001a;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        width: 200px;
+        padding: 10px;
+        border: 1px solid #8000ff;
+        box-shadow: 0 0 10px #8000ff;
+      }
+
+      .menu a {
+        padding: 10px;
+        border-top: 1px solid #400060;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+
+      .menu.active {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Ejercicio 3</div>
+      <div class="menu-toggle" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="menu" id="menu">
+        <a href="#">Inicio</a>
+        <a href="#">Juegos</a>
+        <a href="#">Contacto</a>
+      </div>
+    </nav>
+  </header>
+
+  <div class="container">
+    <main>
+      <h1>Juegos Independientes</h1>
+      <p>Diseño responsivo de proyectos desarrollados por KyraEgon</p>
+      
+      <section class="grid-juegos">
+        <div class="juego">
+          <a href="https://kyraegon.itch.io/rictus" target="_blank">
+            <img src="media/rictus.png" alt="RICTUS" />
+            <h2>RICTUS</h2>
+          </a>
+          <p>2024</p>
+        </div>
+
+        <div class="juego">
+          <a href="https://kyraegon.itch.io/rapture" target="_blank">
+            <img src="media/rapture.png" alt="Rapture" />
+            <h2>Rapture</h2>
+          </a>
+          <p>2023</p>
+        </div>
+
+        <div class="juego">
+          <a href="https://kyraegon.itch.io/quiralidad" target="_blank">
+            <img src="media/chirality.png" alt="CHIRALITY" />
+            <h2>CHIRALITY</h2>
+          </a>
+          <p>2023</p>
+        </div>
+
+        <div class="juego">
+          <a href="https://kyraegon.itch.io/bh32" target="_blank">
+            <img src="media/whereibelong.png" alt="Where I Belong" />
+            <h2>Where I Belong</h2>
+          </a>
+          <p>2023</p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+
+</body>
+</html>
