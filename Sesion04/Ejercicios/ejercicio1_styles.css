@@ -1,0 +1,114 @@
+body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Rajdhani', sans-serif;
+      background: radial-gradient(circle at top left, #14001f, #000000);
+      color: #ffffff;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      animation: pulseBg 10s ease-in-out infinite;
+    }
+
+    @keyframes pulseBg {
+      0%, 100% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+    }
+
+    .glass-container {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 20px;
+      backdrop-filter: blur(16px);
+      box-shadow: 0 0 25px rgba(91, 3, 255, 0.3);
+      padding: 40px 50px;
+      width: 500px;
+      text-align: center;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: 0.3s ease;
+    }
+
+    .glass-container:hover {
+      box-shadow: 0 0 35px rgba(91, 3, 255, 0.8);
+      transform: scale(1.02);
+    }
+
+    h1 {
+      color: #a200ff;
+      margin-bottom: 25px;
+      font-size: 45px;
+      letter-spacing: 1px;
+      text-shadow: 0 0 8px #5900ff;
+      font-weight: 600;
+    }
+
+    input[type="text"] {
+      text-align: center;
+      width: 100%;
+      padding: 1px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 12px;
+      background-color: rgba(45, 45, 45, 0.8);
+      color: #fff;
+      font-size: 45px;
+      outline: none;
+      transition: 0.3s;
+      font-family: 'Rajdhani', sans-serif;
+    }
+
+    input[type="text"]:focus {
+      background-color: rgba(60, 0, 80, 0.8);
+      box-shadow: 0 0 8px #9900ff;
+    }
+
+    button {
+      background: linear-gradient(135deg, #8000ff56, #4400ff4d);
+      border: none;
+      color: white;
+      padding: 12px 50px;
+      border-radius: 12px;
+      font-size: 35px;
+      cursor: pointer;
+      margin-top: 15px;
+      transition: background 0.3s, transform 0.2s;
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 600;
+    }
+
+    button:hover {
+      background: linear-gradient(135deg, #8000ffb7, #4400ffbb);
+      transform: scale(1.1);
+    }
+
+    .resultado {
+      margin-top: 30px;
+      padding: 23px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 15px;
+      box-shadow: 0 0 12px rgba(204, 51, 255, 0.3);
+      color: #ffffff;
+      font-size: 35px;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: aparecer 0.5s forwards;
+    }
+
+    .resultado p {
+      margin: 8px 0;
+      color: #e6ccff;
+      text-shadow: 0 0 4px #8000ff;
+    }
+
+    @keyframes aparecer {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }

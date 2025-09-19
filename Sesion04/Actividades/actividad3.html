@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Actividad 3 </title>
+   <style>
+    body {
+      background-color: #fff0f6;
+      color: #a64d79;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 20px;
+    }
+    h2 {
+      color: #c76d99;
+    }
+    button {
+      background-color: #f7c6d0;
+      color: #6b2943;
+      border: none;
+      padding: 8px 14px;
+      margin: 5px 10px 10px 0;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #f0a6bc;
+      color: #3e1f2f;
+    }
+    pre {
+      background-color: #dfb5c8;
+      color: #ffffff;
+      padding: 15px;
+      border-radius: 6px;
+      max-height: 300px;
+      overflow-y: auto;
+      white-space: pre-wrap;
+      font-size: 0.95rem;
+      box-shadow: 0 0 10px #f7c6d099;
+    }
+    br {
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>a) CREACIÓN DE OBJETOS</h2>
+
+  <button onclick="objectLiteral()">Object Literal</button><br>
+  <button onclick="constructorFunc()">Función Constructora</button><br>
+  <button onclick="objectCreate()">Object.create()</button>
+
+  <h2>b) AGREGANDO PROPIEDADES A LOS OBJETOS</h2>
+
+  <button onclick="addPropsLiteral()">Agregar con Literal</button><br>
+  <button onclick="addPropsConstructor()">Agregar con Constructor</button><br>
+  <button onclick="addPropsObjectCreate()">Agregar con Object.create()</button>
+
+  <h3>Salida:</h3>
+  <pre id="output"></pre>
+
+  <script>
+    const output = document.getElementById('output');
+    function clear() { output.textContent = ''; }
+    function log(...args) { output.textContent += JSON.stringify(args.length > 1 ? args : args[0], null, 2) + '\n'; }
+
+    function objectLiteral() {
+      clear();
+      const persona = {
+        nombre: "Ana",
+        edad: 25,
+        saludar: function() {
+          log("Hola, soy " + this.nombre);
+        }
+      };
+      persona.saludar();
+    }
+
+    function constructorFunc() {
+      clear();
+      function Persona(nombre, edad) {
+        this.nombre = nombre;
+        this.edad = edad;
+        this.saludar = function() {
+          log("Hola, soy " + this.nombre);
+        };
+      }
+      const persona1 = new Persona("Carlos", 30);
+      persona1.saludar();
+    }
+
+    function objectCreate() {
+      clear();
+      const personaProto = {
+        saludar: function() {
+          log("Hola, soy " + this.nombre);
+        }
+      };
+      const persona2 = Object.create(personaProto);
+      persona2.nombre = "Lucía";
+      persona2.edad = 28;
+      persona2.saludar();
+    }
+
+    function addPropsLiteral() {
+      clear();
+      const auto = {
+        marca: "Toyota",
+        modelo: "Corolla"
+      };
+      auto.año = 2022;
+      log(auto);
+    }
+
+    function addPropsConstructor() {
+      clear();
+      function Auto(marca, modelo) {
+        this.marca = marca;
+        this.modelo = modelo;
+      }
+      const auto1 = new Auto("Honda", "Civic");
+      auto1.color = "Rojo";
+      log(auto1);
+    }
+
+    function addPropsObjectCreate() {
+      clear();
+      const autoProto = {
+        mostrarInfo: function() {
+          log(this.marca + " " + this.modelo);
+        }
+      };
+      const auto2 = Object.create(autoProto);
+      auto2.marca = "Ford";
+      auto2.modelo = "Focus";
+      auto2.año = 2021;
+      auto2.mostrarInfo();
+      log(auto2);
+    }
+  </script>
+
+</body>
+</html>

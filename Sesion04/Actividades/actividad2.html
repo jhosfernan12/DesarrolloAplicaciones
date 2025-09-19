@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Actividad 2 - Uso de recursos del lenguaje</title>
+  <style>
+    body{
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #2c0f68, #0c0420);
+      color: #f5f5f5;
+      text-align: center;
+      padding: 30px;
+    }
+    h1{ color: #d9b3ff; }
+    section{
+      margin: 20px auto;
+      padding: 15px;
+      max-width: 600px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 10px;
+    }
+    button{
+      margin: 8px;
+      padding: 8px 14px;
+      border: none;
+      border-radius: 6px;
+      background: linear-gradient(90deg,#9d5cff,#1db8b0);
+      color: #ffffff;
+      font-weight: bold;
+      cursor: pointer;
+
+    }
+    pre{
+      text-align: left;
+      background: rgba(0,0,0,0.4);
+      padding: 10px;
+      border-radius: 6px;
+      overflow-x: auto;
+      max-height: 200px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Actividad 2 - Uso de recursos del lenguaje</h1>
+  <p>Haz clic en cada botón para ver los ejemplos. La salida aparece abajo.</p>
+
+  <section>
+    <h3>Variables y Constantes</h3>
+    <button onclick="ejemploA()">Ejecutar</button>
+    <pre id="outA"></pre>
+  </section>
+
+  <section>
+    <h3>Hoisting</h3>
+    <button onclick="ejemploB()">Ejecutar</button>
+    <pre id="outB"></pre>
+  </section>
+
+  <section>
+    <h3>Scope y console.log()</h3>
+    <button onclick="ejemploC()">Ejecutar</button>
+    <pre id="outC"></pre>
+  </section>
+
+  <section>
+    <h3>Tipos y Conversiones</h3>
+    <button onclick="ejemploD()">Ejecutar</button>
+    <pre id="outD"></pre>
+  </section>
+
+  <script>
+  function ejemploA() {
+    let salida = "";
+    let x = "Variable de bloque";
+    const y = "Constante de bloque";
+    salida += `Dentro del bloque: ${x} | ${y}\n`;
+    try {
+      salida += `Fuera del bloque: ${x}\n`;
+    } catch {
+      salida += "x no accesible fuera del bloque\n";
+    }
+    document.getElementById("outA").textContent = salida;
+  }
+
+  function ejemploB() {
+    let salida = "";
+    salida += `console.log(x === undefined) -> true (antes de var x)\n`;
+    var x = 3;
+    (function() {
+      var myvar;
+      salida += `Dentro IIFE, myvar antes: ${myvar}\n`;
+      myvar = "valor local";
+      salida += `Dentro IIFE, myvar después: ${myvar}\n`;
+    })();
+    document.getElementById("outB").textContent = salida;
+  }
+
+  function ejemploC() {
+    let salida = "";
+    let sinAsignar;
+    salida += `Variable sin asignar: ${sinAsignar}\n`;
+    function externa() {
+      let a = 10;
+      salida += `En externa, a = ${a}\n`;
+      function interna() {
+        let b = 20;
+        salida += `En interna, a = ${a}, b = ${b}\n`;
+      }
+      interna();
+      try {
+        salida += `En externa, b = ${b}\n`;
+      } catch {
+        salida += "b no accesible fuera de interna\n";
+      }
+    }
+    externa();
+    document.getElementById("outC").textContent = salida;
+  }
+
+  function ejemploD() {
+    let salida = "";
+    let answer = 42;
+    salida += `Antes: ${answer} (${typeof answer})\n`;
+    answer = "Gracias por todo el pescado...";
+    salida += `Después: ${answer} (${typeof answer})\n\n`;
+
+    const ejemplosParseInt = [
+      "F|16",
+      "17|8",
+      "15|10",
+      "15.99|10",
+      "FXX123|16",
+      "1111|2",
+      "15*3|10",
+      "12|13",
+      "Hello|8",
+      "0x7|10",
+      "546|2"
+    ];
+
+    ejemplosParseInt.forEach(ej => {
+      let [str, base] = ej.split("|");
+      salida += parseInt(str, +base) + "\n";
+    });
+
+    let howMany = 10;
+    salida += `howMany.toString() -> ${howMany.toString()}\n`;
+    salida += `(45).toString() -> ${(45).toString()}\n`;
+    let x = 7;
+    salida += `x.toString(2) -> ${x.toString(2)}\n`;
+
+    document.getElementById("outD").textContent = salida;
+  }
+</script>
+</body>
+</html>

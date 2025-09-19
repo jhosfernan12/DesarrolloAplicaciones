@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Experiencia 1 </title>
+  <style>
+    body{
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #2c0f68, #0c0420);
+      color: #f5f5f5;
+      text-align: center;
+      padding: 40px;
+    }
+    h1{ color: #d9b3ff; }
+    section{
+      margin: 25px auto;
+      padding: 20px;
+      max-width: 500px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    }
+    button{
+      margin: 10px;
+      padding: 10px 18px;
+      border: none;
+      border-radius: 6px;
+      background: linear-gradient(90deg,#9d5cff,#1db8b0);
+      color: #ffffff;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    button:hover{ transform: scale(1.05); }
+  </style>
+</head>
+<body>
+  <h1>Experiencia  01</h1>
+  <h2>Formas de declarar codigo JavaScript</h2>
+
+  <!-- Codigo en linea -->
+  <section>
+    <h3>Declaración en linea</h3>
+    <p>Este boton usa <code>onclick</code> directamente en el HTML</p>
+    <button onclick="alert('Saludos desde codigo en linea 👽')">
+      Click en línea
+    </button>
+  </section>
+
+  <!-- Codigo en etiquetas <script> -->
+  <section>
+    <h3>Declaración en etiquetas &lt;script&gt;</h3>
+    <p>Este botón se conecta con un <code>&lt;script&gt;</code> dentro del HTML.</p>
+    <button id="btn-interno">Click script interno</button>
+  </section>
+
+  <!-- Codigo en archivo vinculado -->
+  <section>
+    <h3>Declaración en archivo vinculado</h3>
+    <p>Este boton usa un archivo externo <code>main.js</code>.</p>
+    <button id="btn-externo">Click script externo</button>
+  </section>
+
+  <!-- Script interno -->
+  <script>
+    document.getElementById("btn-interno").addEventListener("click", function(){
+      alert("Hola desde un <script> interno ");
+    });
+  </script>
+
+  <!-- Vincular archivo externo -->
+  <script src="actividad1.1.js"></script>
+</body>
+</html>

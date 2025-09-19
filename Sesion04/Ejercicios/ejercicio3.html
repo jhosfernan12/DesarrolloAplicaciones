@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Generador de Contraseña</title>
+  <link rel="stylesheet" href="ejercicio3_syles.css" />
+</head>
+<body>
+  <main class="wrap">
+    <section class="panel">
+      <h1>Generador de Contraseña</h1>
+      <form id="formPwd">
+        <label class="lbl" for="len">Longitud</label>
+        <input id="len" type="number" min="4" max="64" value="12" />
+
+
+        <div class="grid">
+          <label class="opt"><input id="mayus" type="checkbox" checked /> Mayúsculas (A-Z)</label>
+          <label class="opt"><input id="minus" type="checkbox" checked /> Minúsculas (a-z)</label>
+          <label class="opt"><input id="nums"  type="checkbox" checked /> Números (0-9)</label>
+          <label class="opt"><input id="simb"  type="checkbox" checked /> Símbolos (!@#…)</label>
+        </div>
+
+
+        <button type="submit">Generar</button>
+      </form>
+      <div class="box">
+        <input id="pwd" class="out" type="text" readonly placeholder="Tu contraseña aparecerá aquí" />
+        <button id="copiar" type="button">Copiar</button>
+      </div>
+
+
+      <div class="meter">
+        <div id="barra" class="barra"></div>
+      </div>
+      <p id="estado" class="mini">Fuerza: —</p>
+    </section>
+  </main>
+
+
+  <script src="ejercicio3.js"></script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Calculadora de Propinas</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="ejercicio1_styles.css" />
+
+</head>
+<body>
+  <div class="glass-container">
+    <h1>Calculadora de Propinas</h1>
+
+    <input type="text" id="cuenta" placeholder="Monto" maxlength="5" oninput="validarNumero(this, 99999)" autocomplete="off"inputmode="numeric" pattern="[0-9]*"/>
+    <input type="text" id="porcentaje" placeholder="Propina %" maxlength="3" oninput="validarNumero(this, 100)" autocomplete="off" inputmode="numeric" pattern="[0-9]*"/>
+
+    <button onclick="calcularPropina()">Calcular</button>
+
+    <div class="resultado" id="resultado"></div>
+  </div>
+
+  <script src="ejercicio1.js"></script>
+</body>
+</html>

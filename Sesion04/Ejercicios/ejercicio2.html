@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Conversor °C a °F</title>
+  <link rel="stylesheet" href="ejercicio2_styles.css" />
+</head>
+<body>
+  <main class="wrap">
+    <section class="panel">
+      <h1>°C a °F</h1>
+
+
+      <form id="formConv">
+        <label class="lbl">Valor</label>
+        <input id="valor" type="number" step="any" placeholder="Ingresa un número" required />
+
+
+        <div class="toggle">
+          <label class="opt">
+            <input type="radio" name="modo" value="CF" checked />
+            <span>Celsius → Fahrenheit</span>
+          </label>
+          <label class="opt">
+            <input type="radio" name="modo" value="FC" />
+            <span>Fahrenheit → Celsius</span>
+          </label>
+        </div>
+
+
+        <button type="submit">Convertir</button>
+      </form>
+
+
+      <div id="box" class="box">
+        <div class="big" id="num">—</div>
+        <div class="unit" id="uni">°—</div>
+        <div class="mini" id="det">Listo para convertir</div>
+      </div>
+    </section>
+  </main>
+
+
+  <script src="ejercicio2.js"></script>
+</body>
+</html>

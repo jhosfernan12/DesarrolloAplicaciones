@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Actividad 6: Objetos Globales</title>
+  <style>
+    body {
+      background-color: #fff0f6;
+      color: #a64d79;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 20px;
+    }
+    h2 {
+      color: #c76d99;
+    }
+    button {
+      background-color: #f7c6d0;
+      color: #6b2943;
+      border: none;
+      padding: 8px 14px;
+      margin: 5px 10px 10px 0;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #f0a6bc;
+      color: #3e1f2f;
+    }
+    pre {
+      background-color: #dfb5c8;
+      color: #ffffff;
+      padding: 15px;
+      border-radius: 6px;
+      max-height: 400px;
+      overflow-y: auto;
+      white-space: pre-wrap;
+      font-size: 0.95rem;
+      box-shadow: 0 0 10px #f7c6d099;
+    }
+    br {
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>a) USO DEL OBJETO WINDOW</h2>
+  <button onclick="mostrarWindow()">Mostrar propiedades de Window</button>
+
+  <h2>b) USO DEL OBJETO ARRAY</h2>
+  <button onclick="mostrarArray()">Mostrar uso de Array</button>
+
+  <h2>c) USO DEL OBJETO NUMBER</h2>
+  <button onclick="mostrarNumber()">Mostrar uso de Number</button>
+
+  <h3>Salida:</h3>
+  <pre id="output"></pre>
+
+  <script>
+    const output = document.getElementById('output');
+    function clear() { output.textContent = ''; }
+    function log(...args) {
+      output.textContent += JSON.stringify(args.length > 1 ? args : args[0], null, 2) + '\n';
+    }
+
+    // a) USO DEL OBJETO WINDOW
+    function mostrarWindow() {
+      clear();
+      log("Ancho de la ventana:", window.innerWidth);
+      log("Alto de la ventana:", window.innerHeight);
+      log("URL actual:", window.location.href);
+
+      alert("Hola! Esto es una alerta del objeto Window");
+      let respuesta = confirm("¿Quieres continuar?");
+      log("Respuesta del usuario en confirm:", respuesta);
+
+
+      window.open("https://i.pinimg.com/originals/03/fb/29/03fb298c0fcdc275bcfbc5a8cb5d4b3f.gif", "_blank");
+    }
+
+    // b) USO DEL OBJETO ARRAY
+    function mostrarArray() {
+      clear();
+      let frutas = ["manzana", "pera", "platano"];
+      log("Array original:", frutas);
+      log("Longitud:", frutas.length);
+
+      frutas.push("uva");
+      log("Después de push:", frutas);
+
+      frutas.pop();
+      log("Después de pop:", frutas);
+
+      frutas.reverse();
+      log("Después de reverse:", frutas);
+
+      let texto = frutas.join(", ");
+      log("Array como texto:", texto);
+    }
+
+    // c) USO DEL OBJETO NUMBER
+    function mostrarNumber() {
+      clear();
+      let numero = 123.456;
+      log("Número original:", numero);
+
+      log("Máximo valor representable:", Number.MAX_VALUE);
+      log("Mínimo valor representable:", Number.MIN_VALUE);
+
+      log("Exponencial (2 decimales):", numero.toExponential(2));
+      log("Con 1 decimal:", numero.toFixed(1));
+      log("Convertido a string:", numero.toString());
+    }
+  </script>
+
+</body>
+</html>

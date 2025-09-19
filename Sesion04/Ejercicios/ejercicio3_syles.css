@@ -1,0 +1,74 @@
+:root{
+  --ink:#0f172a; --muted:#64748b;
+  --pink:#0093c0; --pink2:hwb(192 67% 0%); --white:#fff;
+}
+
+*{
+    box-sizing:border-box
+}
+
+body{
+  margin:0; font-family:system-ui, Arial, sans-serif; color:var(--ink);
+  min-height:100dvh; display:grid; place-items:center;
+  background: radial-gradient(1200px 600px at 80% -10%, #ffd9ec, #fff),linear-gradient(180deg, #ffe9f5, #ffffff);
+}
+.wrap{
+    width:min(780px,100%); padding:24px
+}
+
+.panel{
+  background:rgba(255,255,255,.75); backdrop-filter: blur(8px);
+  border:1px solid #f3f4f6; border-radius:22px; padding:22px;
+  box-shadow:0 12px 40px rgba(79, 185, 218, 0.18);
+}
+
+h1{
+    margin:0 0 12px; letter-spacing:.3px
+}
+
+.lbl{
+    display:block; font-size:.92rem; color:var(--muted); margin:6px 0
+}
+input[type="number"]{
+  width:130px; padding:10px 12px; border:1px solid #e5e7eb; border-radius:12px;
+}
+
+.grid{
+    display:grid; grid-template-columns:repeat(2, minmax(220px, 1fr)); gap:10px; margin:12px 0
+}
+.opt{
+    display:flex; gap:8px; align-items:center; padding:10px 12px; border-radius:12px; background:#fff; border:1px solid #f1f5f9
+}
+
+.opt input{accent-color:var(--pink)}
+button{
+  margin-top:10px; padding:12px 16px; border:0; border-radius:14px;
+  background:var(--pink); color:#fff; font-weight:700; cursor:pointer;
+}
+button:hover{filter:brightness(.97)}
+
+
+.box{
+    display:flex; gap:10px; align-items:center; margin-top:14px
+}
+.out{
+  flex:1; padding:12px; border:1px solid #e5e7eb; border-radius:12px;
+  font-family:ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+
+.meter{
+    height:10px; background:#f1f5f9; border-radius:999px; overflow:hidden; margin-top:12px
+}
+.barra{
+    height:100%; width:0%; background:linear-gradient(90deg,#7df0ff,#3e9fc5)
+}
+
+.mini{
+    color:var(--muted); margin:6px 2px 0
+}
+
+
+@media (max-width:520px){
+  .grid{grid-template-columns:1fr}
+}

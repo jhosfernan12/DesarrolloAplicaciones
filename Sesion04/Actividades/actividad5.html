@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Actividad 5: Uso de Arrays</title>
+  <style>
+    body {
+      background-color: #fff0f6;
+      color: #a64d79;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 20px;
+    }
+    h2 {
+      color: #c76d99;
+    }
+    button {
+      background-color: #f7c6d0;
+      color: #6b2943;
+      border: none;
+      padding: 8px 14px;
+      margin: 5px 10px 10px 0;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #f0a6bc;
+      color: #3e1f2f;
+    }
+    pre {
+      background-color: #dfb5c8;
+      color: #ffffff;
+      padding: 15px;
+      border-radius: 6px;
+      max-height: 400px;
+      overflow-y: auto;
+      white-space: pre-wrap;
+      font-size: 0.95rem;
+      box-shadow: 0 0 10px #f7c6d099;
+    }
+    br {
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>a) CREACIÓN DE ARRAYS</h2>
+  <button onclick="crearArrays()">Mostrar Creacion de Arrays</button>
+
+  <h2>b) MANIPULACIÓN DE ARRAYS</h2>
+  <button onclick="manipularArrays()">Mostrar Manipulacion</button>
+
+  <h2>c) USO DE ITERADORES DE ARRAYS</h2>
+  <button onclick="usarIteradores()">Mostrar Iteradores</button>
+
+  <h3>Salida:</h3>
+  <pre id="output"></pre>
+
+  <script>
+    const output = document.getElementById('output');
+    function clear() { output.textContent = ''; }
+    function log(...args) {
+      output.textContent += JSON.stringify(args.length > 1 ? args : args[0], null, 2) + '\n';
+    }
+
+    // a) CREACIÓN DE ARRAYS
+    function crearArrays() {
+      clear();
+
+      let numeros = [1, 2, 3];
+      let frutas = new Array("manzana", "pera");
+      let personas = Array.of(
+        { nombre: "Ana", edad: 20 },
+        { nombre: "Luis", edad: 25 }
+      );
+
+      log("Array numerico:", numeros);
+      log("Array de strings:", frutas);
+      log("Array de objetos:", personas);
+    }
+
+    // b) MANIPULACIÓN DE ARRAYS
+    function manipularArrays() {
+      clear();
+
+      let numeros = [1, 2, 3, 4];
+      let frutas = ["manzana", "pera", "platano"];
+      let personas = [
+        { nombre: "Kimberly", edad: 20 },
+        { nombre: "Belen", edad: 25 }
+      ];
+
+      log("Iniciales:", { numeros, frutas, personas });
+
+      numeros.pop(); // elimina ultimo
+      frutas.unshift("uva"); // agrega al inicio
+      personas.reverse(); // invierte
+
+      log("Después de manipulación:", { numeros, frutas, personas });
+    }
+
+    // c) USO DE ITERADORES DE ARRAYS
+    function usarIteradores() {
+      clear();
+
+      let numeros = [1, 2, 3, 4];
+      let frutas = ["manzana", "pera", "platano", "sandia"];
+      let personas = [
+        { nombre: "Ana", edad: 20 },
+        { nombre: "Luis", edad: 25 },
+        { nombre: "Marta", edad: 30 }
+      ];
+
+      let cuadrados = numeros.map(n => n * n);
+      let mayoresEdad = personas.filter(p => p.edad >= 25);
+      let primeraFruta = frutas.find(f => f.length > 5);
+      let sumaNumeros = numeros.reduce((acc, n) => acc + n, 0);
+
+      log("map (cuadrados):", cuadrados);
+      log("filter (mayores de edad):", mayoresEdad);
+      log("find (primera fruta con nombre largo):", primeraFruta);
+      log("reduce (suma de numeros):", sumaNumeros);
+
+      log("Listado de frutas:");
+      frutas.forEach((f, i) => log((i + 1) + ". " + f));
+    }
+  </script>
+
+</body>
+</html>

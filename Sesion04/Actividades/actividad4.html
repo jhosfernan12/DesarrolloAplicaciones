@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Actividad 4</title>
+  <style>
+    body {
+      background-color: #fff0f6;
+      color: #a64d79;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 20px;
+    }
+    h2 {
+      color: #c76d99;
+    }
+    button {
+      background-color: #f7c6d0;
+      color: #6b2943;
+      border: none;
+      padding: 8px 14px;
+      margin: 5px 10px 10px 0;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #f0a6bc;
+      color: #3e1f2f;
+    }
+    pre {
+      background-color: #dfb5c8;
+      color: #ffffff;
+      padding: 15px;
+      border-radius: 6px;
+      max-height: 300px;
+      overflow-y: auto;
+      white-space: pre-wrap;
+      font-size: 0.95rem;
+      box-shadow: 0 0 10px #f7c6d099;
+    }
+    br {
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>a) CIUDADANO DE PRIMERA CLASE</h2>
+
+  <button onclick="foo()">foo()</button><br>
+  <button onclick="greetingFunc()">greeting()</button><br>
+  <button onclick="sayHelloFunc()">sayHello()()</button>
+
+  <h2>b) CLOSURE</h2>
+  <button onclick="closureFunc()">makeFunc()</button>
+
+  <h2>c) ÁMBITO DE FUNCIÓN</h2>
+  <button onclick="scopeError()">Error acceso x</button><br>
+  <button onclick="scopeCorrect()">Acceso correcto x</button><br>
+  <button onclick="tryCatchFunc()">Función f()</button>
+
+  <h2>d) MANEJO DE EXCEPCIONES</h2>
+  <button onclick="exceptionFunc()">Manejo excepciones</button>
+
+  <h3>Salida:</h3>
+  <pre id="output"></pre>
+
+  <script>
+    const output = document.getElementById('output');
+    function clear() { output.textContent = ''; }
+    function log(...args) { output.textContent += args.join(' ') + '\n'; }
+
+    function foo() {
+      clear();
+      const foo = () => log("foobar");
+      foo();
+    }
+
+    function greetingFunc() {
+      clear();
+      function sayHello() { return "Hello, "; }
+      function greeting(helloMessage, name) { log(helloMessage() + name); }
+      greeting(sayHello, "JavaScript!");
+    }
+
+    function sayHelloFunc() {
+      clear();
+      function sayHello() { return () => log("Hello!"); }
+      sayHello()();
+    }
+
+    function closureFunc() {
+      clear();
+      function makeFunc() {
+        const name = 'Mozilla';
+        function displayName() { log(name); }
+        return displayName;
+      }
+      const myFunc = makeFunc();
+      myFunc();
+    }
+
+    function scopeError() {
+      clear();
+      function exampleFunction() {
+        const x = "declared inside function";
+        log("Inside function");
+        log(x);
+      }
+      exampleFunction();
+      try { log(x); } catch(e) { log("Error:", e.message); }
+    }
+
+    function scopeCorrect() {
+      clear();
+      const x = "declared outside function";
+      function exampleFunction() {
+        log("Inside function");
+        log(x);
+      }
+      exampleFunction();
+      log("Outside function");
+      log(x);
+    }
+
+    function tryCatchFunc() {
+      clear();
+      function f() {
+        try {
+          log(0);
+          throw 'bogus';
+        } catch(e) {
+          log(1);
+          return true;
+        } finally {
+          log(3);
+          return false;
+        }
+      }
+      const res = f();
+      log("Resultado f():", res);
+    }
+
+    function exceptionFunc() {
+      clear();
+      function UserException(message) {
+        this.message = message;
+        this.name = 'UserException';
+      }
+      function getMonthName(mo) {
+        mo--;
+        const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul',
+                        'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        if (months[mo] !== undefined) {
+          return months[mo];
+        } else {
+          throw new UserException('InvalidMonthNo');
+        }
+      }
+      let monthName;
+      try {
+        const myMonth = 15;
+        monthName = getMonthName(myMonth);
+      } catch(e) {
+        monthName = 'unknown';
+        log("Error:", e.message, e.name);
+      }
+      log("Resultado:", monthName);
+    }
+  </script>
+
+</body>
+</html>
