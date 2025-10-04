@@ -1,0 +1,101 @@
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: "Segoe UI", sans-serif;
+  scroll-behavior: smooth;
+}
+
+.navbar {
+  background-color: #000 !important;
+  box-shadow: 0 0 5px #a020f0, 0 0 15px #a020f0, 0 0 30px #a020f0;
+  border: 1px solid #a020f0;
+}
+.navbar .navbar-brand, .navbar .nav-link {
+  color: #a020f0;
+  text-shadow: 0 0 5px #a020f0, 0 0 10px #a020f0, 0 0 20px #a020f0;
+}
+.navbar .navbar-brand:hover, .navbar .nav-link:hover {
+  color: #d580ff;
+  text-shadow: 0 0 10px #d580ff;
+}
+
+header {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.9), rgba(20, 0, 30, 0.9));
+}
+header h1 {
+  color: #a020f0;
+  text-shadow: 0 0 5px #a020f0, 0 0 10px #a020f0, 0 0 20px #a020f0;
+}
+header p {
+  color: #d580ff;
+}
+header .btn-primary {
+  background-color: #a020f0;
+  border: none;
+  box-shadow: 0 0 5px #a020f0, 0 0 15px #a020f0, 0 0 30px #a020f0;
+  border: 1px solid #a020f0;
+}
+header .btn-primary:hover {
+  background-color: #d580ff;
+  box-shadow: 0 0 5px #d580ff, 0 0 15px #d580ff, 0 0 30px #d580ff;
+  border: 1px solid #d580ff;
+}
+
+.card {
+  background-color: #111;
+  color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 5px #a020f0, 0 0 15px #a020f0, 0 0 30px #a020f0;
+  border: 1px solid #a020f0;
+}
+.card .card-title {
+  color: #a020f0;
+  text-shadow: 0 0 5px #a020f0, 0 0 10px #a020f0, 0 0 20px #a020f0;
+}
+
+#testimonios blockquote {
+  color: #d580ff;
+  text-shadow: 0 0 5px #a020f0, 0 0 10px #a020f0, 0 0 20px #a020f0;
+  font-style: italic;
+}
+#testimonios footer {
+  color: #a020f0;
+}
+
+#sobremi h2 {
+  color: #a020f0;
+  text-shadow: 0 0 5px #a020f0, 0 0 10px #a020f0, 0 0 20px #a020f0;
+}
+
+form .form-control {
+  background-color: #111;
+  border: 1px solid #a020f0;
+  color: #fff;
+}
+form .form-control:focus {
+  background-color: #111;
+  color: #fff;
+  outline: none;
+  box-shadow: 0 0 5px #a020f0, 0 0 15px #a020f0, 0 0 30px #a020f0;
+  border: 1px solid #a020f0;
+}
+form .btn-success {
+  background-color: #a020f0;
+  border: none;
+  box-shadow: 0 0 5px #a020f0, 0 0 15px #a020f0, 0 0 30px #a020f0;
+  border: 1px solid #a020f0;
+}
+form .btn-success:hover {
+  background-color: #d580ff;
+  box-shadow: 0 0 5px #d580ff, 0 0 15px #d580ff, 0 0 30px #d580ff;
+  border: 1px solid #d580ff;
+}
+
+footer {
+  background-color: #000;
+  border-top: 1px solid #a020f0;
+}
+footer p {
+  color: #d580ff;
+  text-shadow: 0 0 5px #a020f0, 0 0 10px #a020f0, 0 0 20px #a020f0;
+}/*# sourceMappingURL=actividad4_estilos.css.map */

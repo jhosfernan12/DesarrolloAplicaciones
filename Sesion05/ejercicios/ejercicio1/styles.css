@@ -1,0 +1,106 @@
+/* Fuente global */
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #ffe6f0;
+  color: #333;
+}
+
+
+/* Navbar */
+.navbar {
+  transition: 0.4s;
+}
+.navbar .nav-link {
+  color: #851450;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+.navbar.scrolled {
+  background-color: #ffb3cc !important;
+}
+
+
+/* Sección de presentación */
+.perfil-img {
+  max-width: 200px;
+  border: 5px solid #fff;
+}
+
+
+/* Sección títulos */
+.section-title {
+  color: #d63384;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+
+/* Iconos info personal */
+.icono {
+  font-size: 2.5rem;
+  color: #d63384;
+}
+
+
+/* Cards de proyectos */
+.card {
+  border-radius: 15px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+
+.hover-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+
+/* Botones */
+.btn-primary {
+  background: linear-gradient(45deg, #ff99c8, #d63384);
+  border: none;
+}
+
+
+.btn-primary:hover {
+  background: linear-gradient(45deg, #d63384, #ff99c8);
+}
+
+
+/* Contactos y enlaces */
+.contact-info a {
+  color: #d63384;
+  text-decoration: none;
+}
+
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+
+/* Footer */
+.footer {
+  background-color: #ffccd9;
+}
+/* Efecto de brillo sutil en el nombre */
+.nombre-brillante {
+  color: #d63384;
+  text-shadow:
+    0 0 2px #ff99c8,
+    0 0 4px #ff66a3;
+  animation: brillar-sutil 3s infinite alternate;
+}
+
+
+@keyframes brillar-sutil {
+  0% {
+    text-shadow: 0 0 2px #ff99c8, 0 0 4px #ff66a3;
+  }
+  50% {
+    text-shadow: 0 0 3px #ff99c8, 0 0 6px #ff66a3;
+  }
+  100% {
+    text-shadow: 0 0 2px #ff99c8, 0 0 4px #ff66a3;
+  }
+}

@@ -1,0 +1,62 @@
+$color-primario: #bf43e9;
+$color-secundario: #a1cdf1;
+$color-texto: #333;
+$fuente-base: 'Arial', sans-serif;
+$tamano-base: 16px;
+
+@mixin boton($bg-color, $txt-color) {
+background-color: $bg-color;
+color: $txt-color;
+padding: 10px 20px;
+border: none;
+border-radius: 6px;
+cursor: pointer;
+font-weight: bold;
+transition: 0.3s ease;
+
+&:hover {
+background-color: darken($bg-color, 10%);
+}
+}
+
+@function toRem($px) {
+@return ($px / 16) * 1rem;
+}
+body {
+font-family: $fuente-base;
+font-size: $tamano-base;
+background: #f8d1ef;
+color: $color-texto;
+margin: 0;
+padding: 0;
+}
+.contenedor {
+max-width: 800px;
+margin: auto;
+padding: toRem(20);
+
+h1 {
+color: $color-primario;
+text-align: center;
+}
+
+p {
+font-size: toRem(18);
+line-height: 1.5;
+text-align: center;
+}
+
+.botones {
+display: flex;
+justify-content: center;
+gap: 10px;
+margin-top: 20px;
+
+button {
+    @include boton($color-primario, white);
+}
+.secundario {
+    @include boton($color-secundario, white);
+}
+}
+}

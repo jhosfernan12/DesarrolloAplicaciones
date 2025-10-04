@@ -1,0 +1,37 @@
+/* Fondo del encabezado */
+.header-rosa {
+  background-color: #f8d7e0; 
+}
+/*Fondo nav*/
+.bg-fondo {
+  background-color: #eb93a7 !important; 
+}
+
+h1 {
+  color: #ffffff; 
+  text-shadow: 
+    0 0 6px rgba(242, 182, 193, 0.7),   /* halo cercano más fuerte */
+    0 0 12px rgba(242, 182, 193, 0.5),  /* halo intermedio */
+    0 0 20px rgba(242, 150, 180, 0.3);  /* halo más lejano */
+}
+
+.footer-fondo {
+  background-color: #f2b6c8; 
+}
+
+.sombra-rosa {
+  box-shadow: 0 4px 12px rgba(210, 120, 150, 0.25);
+}
+
+/* Fondo general de la página */
+body {
+  background-color: #fdf3f7;
+  color: #333; 
+}
+
+/* Imagen ajustada */
+.img1 {
+  width: auto;
+  height: 220px;
+  border-radius: 8px; 
+}

@@ -1,0 +1,55 @@
+body {
+  font-family: "Arial", sans-serif;
+  font-size: 16px;
+  background: #f8d1ef;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.contenedor {
+  max-width: 800px;
+  margin: auto;
+  padding: 1.25rem;
+}
+.contenedor h1 {
+  color: #bf43e9;
+  text-align: center;
+}
+.contenedor p {
+  font-size: 1.125rem;
+  line-height: 1.5;
+  text-align: center;
+}
+.contenedor .botones {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+.contenedor .botones button {
+  background-color: #bf43e9;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+.contenedor .botones button:hover {
+  background-color: rgb(173.1142857143, 26.0857142857, 222.9142857143);
+}
+.contenedor .botones .secundario {
+  background-color: #a1cdf1;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+.contenedor .botones .secundario:hover {
+  background-color: rgb(116.6111111111, 181.3888888889, 234.3888888889);
+}/*# sourceMappingURL=pruebas.css.map */

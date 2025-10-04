@@ -1,0 +1,151 @@
+/* paleta de colores */
+$rosa: #f3a6c6;
+$rosa-600: darken($rosa, 6%);
+$rosa-700: darken($rosa, 12%);
+$texto: #4a3f46;
+$suave: #7f6f77;
+$fondo: #ffffff;
+
+/* sombras */
+$sombra-suave: 0 10px 24px rgba(243,166,198,.22);
+$sombra-grande: 0 22px 44px rgba(243,166,198,.25);
+
+/* helper de transicion */
+@mixin mov($prop: all, $time: .25s, $ease: cubic-bezier(.2,.6,.2,1)) {
+  transition: $prop $time $ease;
+}
+
+/* base */
+body {
+  color: $texto;
+  background: $fondo;
+  padding-top: 72px;
+}
+
+a { color: $rosa-700; }
+a:hover { color: $rosa-600; }
+
+/* barra superior con efecto vidrio */
+.barra-vidrio {
+  --bs-navbar-color: #{$suave};
+  --bs-navbar-hover-color: #{$rosa-700};
+  --bs-navbar-active-color: #{$rosa};
+  backdrop-filter: saturate(160%) blur(8px);
+  background: rgba(255,255,255,.85);
+  box-shadow: none;
+  @include mov(box-shadow, .2s);
+
+  .navbar-brand { font-weight: 700; letter-spacing: .2px; }
+
+  .nav-link {
+    position: relative;
+    font-weight: 500;
+    padding: .65rem .8rem;
+    @include mov(color);
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: .8rem; right: .8rem; bottom: .2rem;
+      height: 2px;
+      background: $rosa;
+      transform: scaleX(0);
+      transform-origin: left;
+      @include mov(transform, .25s);
+    }
+    &:hover, &.active { color: $rosa-700; &::after { transform: scaleX(1); } }
+  }
+
+  .navbar-toggler { border: 0; border-radius: .6rem; &:hover { background: rgba($rosa,.12); } }
+}
+
+/* sombra al hacer scroll (se agrega via js) */
+.barra-vidrio.scrol { box-shadow: $sombra-suave; background: rgba(255,255,255,.95); }
+
+/* animacion del dropdown */
+@keyframes bajarSuave {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* menu desplegable */
+.dropdown-menu.menu-animado {
+  border: 0;
+  border-radius: .9rem;
+  animation: bajarSuave .18s ease-out;
+  box-shadow: $sombra-grande;
+  min-width: 16rem;
+
+  .dropdown-item {
+    border-radius: .5rem;
+    color: $texto;
+    @include mov(background-color, .15s);
+    &:hover { background: rgba($rosa,.10); color: $rosa-700; }
+  }
+
+  .titulo-menu {
+    font-size: .8rem;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: $suave;
+    margin-bottom: .35rem;
+  }
+}
+
+/* en escritorio: abrir por hover y ver 2 columnas */
+.menu-grid { } /* en movil se mantiene la fila normal */
+@media (min-width: 992px) {
+  .menu-hover-lg:hover > .dropdown-menu { display: block; }
+  .menu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 1.25rem; }
+}
+
+/* botones */
+.btn-principal {
+  background: linear-gradient(180deg, $rosa, $rosa-600);
+  color: #fff;
+  border: 0;
+  border-radius: .9rem;
+  box-shadow: $sombra-suave;
+  padding: .55rem 1rem;
+  @include mov(box-shadow, .2s);
+
+  &:hover {
+    background: linear-gradient(180deg, $rosa-600, $rosa-700);
+    box-shadow: 0 16px 30px rgba(243,166,198,.28);
+  }
+  &:active { background: $rosa-700 !important; }
+}
+
+.btn-suave {
+  background: rgba($rosa,.12);
+  color: $rosa-700;
+  border: 1px solid rgba($rosa,.18);
+  border-radius: .7rem;
+  @include mov(background-color, .15s);
+  &:hover { background: rgba($rosa,.18); }
+}
+
+/* portada */
+.portada {
+  min-height: 62vh;
+  padding: 6rem 0 3rem;
+  background:
+    radial-gradient(1200px 520px at 50% -10%, rgba($rosa,.18), transparent 60%),
+    linear-gradient(180deg, #fff, #fff);
+  text-align: center;
+}
+
+/* badge */
+.etiqueta {
+  display: inline-block;
+  padding: .35rem .6rem;
+  border-radius: 999px;
+  background: rgba($rosa,.12);
+  color: $rosa-700;
+  font-weight: 600;
+  font-size: .85rem;
+}
+
+/* tarjetas */
+.sombra-suave { box-shadow: $sombra-suave; }
+.card { border: 0; border-radius: 1rem; }
