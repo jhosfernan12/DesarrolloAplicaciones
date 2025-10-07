@@ -1,0 +1,8 @@
+[
+  { "name": "Gordon Freeman", "game": "Half-Life 1", "gif": "/assets/gordon-bg.png" },
+  { "name": "Alyx Vance", "game": "Half-Life 2", "gif": "/assets/scientist.png" },
+  { "name": "Zombie", "game": "Half-Life 2", "gif": "/assets/zombie.png" },
+  { "name": "Zombine", "game": "Half-Life 2", "gif": "/assets/zombine.webm" },
+  { "name": "Advisor", "game": "Half-Life 2", "gif": "/assets/advisor.webm" },
+  { "name": "Antlion", "game": "Half-Life 2", "gif": "/assets/antlion.webm" }
+]
