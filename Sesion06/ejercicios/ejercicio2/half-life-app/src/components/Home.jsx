@@ -5,7 +5,12 @@ import Modal from "./Modal";
 import FormCombine from "./FormCombine";
 
 // assets
-import combineVideo from "../assets/combinereclutamiento.mp4";
+import videoEntrada from "../assets/videoentrada.webm";
+import combineVideo from "../assets/combine.webm";
+import combineBg from "../assets/combine-wall.png";
+import h1Gameplay from "../assets/h1_gameplay.webm";
+import h2Gameplay from "../assets/h2_gameplay.webm";
+
 import generalBg from "../assets/fondo.jpg";
 import gordon from "../assets/gordon-bg.png";
 import alyx from "../assets/scientist.png";
@@ -36,31 +41,40 @@ export default function Home() {
 
   return (
     <>
-      {/* Hero */}
+      {/* Home / Entrada */}
       <section id="home" className="hero-wrap">
         <video className="hero-video" autoPlay loop muted playsInline>
-          <source src={hllogo} type="video/webm" />
+          <source src={videoEntrada} type="video/webm" />
         </video>
         <div className="hero-overlay">
           <h1 className="glitch" data-text="HALF-LIFE UNIVERSE">HALF-LIFE UNIVERSE</h1>
-          <p className="hero-sub">Un homenaje interactivo al mundo Combine, Gordon y Alyx.</p>
+          <p className="hero-sub">Una experiencia interactiva al mundo Combine, Gordon y Alyx.</p>
           <a href="#characters" className="button">Explorar personajes</a>
         </div>
       </section>
 
-      {/* Characters Section */}
-      <Section id="characters" title="Personajes" subtitle="Explora caras y criaturas icónicas" backgroundImg={generalBg} dim={0.35}>
+      {/* Half-Life 1 Gameplay */}
+      <Section id="hl1" title="Half-Life 1" subtitle="Revive los momentos icónicos" backgroundVideo={h1Gameplay} dim={0.5}>
         <div className="grid-cards">
-          {characters.map((char, i) => (
+          {characters.slice(0,2).map((char,i) => (
             <CharacterCard key={i} character={char} onOpen={openModal} />
           ))}
         </div>
       </Section>
 
-      {/* Combine Section */}
-      <Section id="recruit" title="Combine & Reclutamiento" subtitle="Oscuros, ordenados, inevitables" backgroundVideo={combineVideo} dim={0.5}>
+      {/* Half-Life 2 Gameplay */}
+      <Section id="hl2" title="Half-Life 2" subtitle="City 17 y el Combine" backgroundVideo={h2Gameplay} dim={0.45}>
         <div className="grid-cards">
-          {characters.slice(2).map((char, i) => (
+          {characters.slice(1).map((char,i) => (
+            <CharacterCard key={i} character={char} onOpen={openModal} />
+          ))}
+        </div>
+      </Section>
+
+      {/* Combine / Reclutamiento */}
+      <Section id="recruit" title="Combine & Reclutamiento" subtitle="Oscuros, ordenados, inevitables" backgroundImg={combineBg} dim={0.6}>
+        <div className="grid-cards">
+          {characters.slice(2).map((char,i) => (
             <CharacterCard key={i} character={char} onOpen={openModal} />
           ))}
         </div>
@@ -68,16 +82,6 @@ export default function Home() {
           <button className="button" onClick={() => openModal({ name: "Formulario de Reclutamiento", game: "Combine", asset: "", description: "", form: true })}>
             Rellenar ficha de reclutamiento
           </button>
-        </div>
-      </Section>
-
-      {/* Lore / About Section */}
-      <Section id="lore" title="Historia" subtitle="Una breve carta de amor al universo">
-        <div className="lore-card">
-          <p>
-            Desde Black Mesa hasta City 17, el universo Half-Life combina tensión, ciencia y un diseño de mundos que perdura.
-            Este homenaje busca capturar la atmósfera: sonidos metálicos, cielos grises y la sensación de estar siempre observado.
-          </p>
         </div>
       </Section>
 
@@ -103,7 +107,6 @@ export default function Home() {
               ) : (
                 <div className="modal-actions">
                   <button className="button" onClick={() => alert("Reproduciendo audio ambiental... (simulado)")}>Play ambient</button>
-                  <button className="button" onClick={() => alert("Abrir ficha extendida... (simulado)")}>Ficha completa</button>
                 </div>
               )}
             </div>
