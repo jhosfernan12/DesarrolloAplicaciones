@@ -1,17 +1,16 @@
 import React from "react";
 
-export default function Section({ title, backgroundImg, backgroundVideo, children, dim = 0.5 }) {
-  const bgStyle = backgroundImg ? { backgroundImage: `url(${backgroundImg})` } : {};
-
+export default function Section({ id, title, subtitle, backgroundVideo, children }) {
   return (
-    <section className="section-wrap" style={bgStyle}>
+    <section id={id} className="section-container">
       {backgroundVideo && (
-        <video className="section-bg-video" autoPlay loop muted playsInline style={{ opacity: dim }}>
+        <video className="section-bg-video" autoPlay loop muted playsInline>
           <source src={backgroundVideo} type="video/webm" />
         </video>
       )}
       <div className="section-content">
-        {title && <h2 className="section-title">{title}</h2>}
+        <h2 className="section-title">{title}</h2>
+        {subtitle && <p className="section-subtitle">{subtitle}</p>}
         {children}
       </div>
     </section>
