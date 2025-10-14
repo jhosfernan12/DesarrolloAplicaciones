@@ -32,6 +32,9 @@ export default function Nav() {
         <a href="#combine" onClick={(e) => { e.preventDefault(); scrollToSection('combine'); }}>
           Combine
         </a>
+        <a href="#combine-wall" onClick={(e) => { e.preventDefault(); scrollToSection('combine-wall'); }}>
+          Imperio
+        </a>
       </div>
     </nav>
   );

@@ -8,28 +8,32 @@ import videoEntrada from "../assets/videoentrada.webm";
 import hllogo from "../assets/hllogo_vhs_2.webm";
 
 // Assets para secciones
-import combineWall from "../assets/combine-wall.png";
+import combineMany from "../assets/manycombine.gif";
 import combineVideo from "../assets/combine.webm";
 import combineReclutamiento from "../assets/combinereclutamiento.mp4";
-import resistanceBg from "../assets/resistance-bg.gif";
-import xenBg from "../assets/xen-bg.gif";
+import resistencia from "../assets/resistance-bg.gif";
+import xen from "../assets/xen-bg.gif";
 
 // Personajes
-import gordon from "../assets/gordonfreeman.png";
+import gordon from "../assets/gordonfreeman.gif";
 import alyx from "../assets/alyx.png";
 import barney from "../assets/barney.png";
 import eli from "../assets/eli.png";
-import zombie from "../assets/zombie.png";
-import headcrab from "../assets/headcrab.png";
-import vortigaunt from "../assets/vortigaunt.png";
+import zombie from "../assets/zombie.gif";
+import headcrab from "../assets/headcrab.gif";
+import vortigaunt from "../assets/vortigaunt.gif";
 import antlion from "../assets/antlion.webm";
 import zombine from "../assets/zombine.webm";
 import advisor from "../assets/advisor.webm";
 import combineSoldier from "../assets/combine.webm";
 import strider from "../assets/strider.gif";
-import raptor from "../assets/raptor.png";
+import raptor from "../assets/raptor.gif";
 import crabsyhtn from "../assets/crabsyhtn.gif";
 import cremator from "../assets/cremator.gif";
+import gonarch from "../assets/gonarch.gif";
+import houndeye from "../assets/houndeye.gif";
+import itciosaurio from "../assets/itchtiosaurio.gif";
+import bullsquid from "../assets/bullsquid.gif";
 
 // Organizar personajes por nuevas secciones
 const resistanceCharacters = [
@@ -43,7 +47,11 @@ const xenCharacters = [
   { name: "Headcrab", game: "Half-Life Series", asset: headcrab, description: "Parásito alienígena que se adhiere a huéspedes humanos, creando zombies." },
   { name: "Zombie", game: "Half-Life Series", asset: zombie, description: "Seres humanos infectados por parásitos Headcrab. Hostiles pero con memoria residual." },
   { name: "Vortigaunt", game: "Half-Life Series", asset: vortigaunt, description: "Especie alienígena esclavizada, luego aliada de la resistencia humana." },
-  { name: "Antlion", game: "Half-Life 2", asset: antlion, description: "Criaturas insectoides territoriales que habitan en las arenas fuera de City 17." }
+  { name: "Antlion", game: "Half-Life 2", asset: antlion, description: "Criaturas insectoides territoriales que habitan en las arenas fuera de City 17." },
+  { name: "Gonarch", game: "Half-Life", asset: gonarch, description: "Enorme reina Headcrab que actúa como jefe final en el primer juego Half-Life." },
+  { name: "Houndeye", game: "Half-Life", asset: houndeye, description: "Criaturas alienígenas que emiten ondas sónicas para aturdir a sus presas." },
+  { name: "Itchiosaurio", game: "Half-Life", asset: itciosaurio, description: "Depredador acuático que ataca en ambientes submarinos." },
+  { name: "Bullsquid", game: "Half-Life", asset: bullsquid, description: "Bestia agresiva con tentáculos y ataque ácido." }
 ];
 
 const combineCharacters = [
@@ -88,11 +96,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Resistencia Section - USANDO resistanceBg GIF */}
+      {/* Resistencia Section - CON FONDO DE IMAGEN */}
       <section id="resistance" className="resistance-section">
         <div 
-          className="section-bg" 
-          style={{ backgroundImage: `url(${resistanceBg})` }}
+          className="section-bg-image"
+          style={{ backgroundImage: `url(${resistencia})` }}
         ></div>
         <div className="section-content">
           <h2>Resistencia</h2>
@@ -105,11 +113,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Xen Section - USANDO xenBg GIF */}
+      {/* Xen Section - CON FONDO DE IMAGEN */}
       <section id="xen" className="xen-section">
         <div 
-          className="section-bg" 
-          style={{ backgroundImage: `url(${xenBg})` }}
+          className="section-bg-image"
+          style={{ backgroundImage: `url(${xen})` }}
         ></div>
         <div className="section-content">
           <h2>Xen</h2>
@@ -122,9 +130,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Combine Section - CON VIDEO DE FONDO */}
+       {/* Combine Section - CON FONDO DE VIDEO */}
       <section id="combine" className="combine-section">
-        <video className="section-bg" autoPlay loop muted playsInline>
+        <video className="section-bg-video" autoPlay loop muted playsInline>
           <source src={combineReclutamiento} type="video/mp4" />
         </video>
         <div className="section-content">
@@ -153,6 +161,29 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Nueva Sección Combine Wall al final */}
+<section id="combine-wall" className="combine-wall-section">
+  <img className="imperio-bg-video" src={combineMany} alt="Combine Wall" />
+  <div className="section-content">
+    <h2>Imperio Universal</h2>
+    <p className="section-subtitle">La expansión del Combine continúa</p>
+    <div className="recruit-section">
+      <button 
+        className="combine-button" 
+        onClick={() => openModal({ 
+          name: "Iniciación Combine", 
+          game: "Sistema de Reclutamiento", 
+          asset: combineMany,
+          description: "Proceso de evaluación para candidatos a asimilación Combine. Complete el formulario para análisis preliminar.", 
+          form: true 
+        })}
+      >
+        Unirse al Combine
+      </button>
+    </div>
+  </div>
+</section>
 
       {/* Modal */}
       {selected && (

@@ -64,7 +64,7 @@ a {
   background: rgba(255, 255, 255, 0.05);
 }
 
-/* HERO SECTION PROFESIONAL - LOGO MÁS GRANDE */
+/* HERO SECTION PROFESIONAL */
 .hero-section {
   position: relative;
   height: 100vh;
@@ -95,7 +95,7 @@ a {
 }
 
 .hero-logo {
-  height: 300px;
+  height: 180px;
   width: auto;
   margin-bottom: 30px;
   filter: brightness(1.1) contrast(1.2);
@@ -131,128 +131,6 @@ a {
   box-shadow: 0 8px 25px rgba(0,0,0,0.4);
 }
 
-/* SECTION COMPONENT PROFESIONAL */
-.section-container {
-  position: relative;
-  min-height: 100vh;
-  padding: 120px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-bottom: 1px solid #1a1a1a;
-}
-
-.section-bg-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(0.25) contrast(1.1);
-  z-index: 1;
-}
-
-.section-content {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  max-width: 1200px;
-  text-align: center;
-}
-
-.section-title {
-  font-size: 2.8rem;
-  color: #ffffff;
-  margin-bottom: 12px;
-  font-weight: 600;
-  letter-spacing: 1px;
-}
-
-.section-subtitle {
-  font-size: 1.1rem;
-  color: #999999;
-  margin-bottom: 50px;
-  font-weight: 300;
-  letter-spacing: 0.5px;
-}
-
-/* CARDS GRID PROFESIONAL */
-.cards-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
-  width: 100%;
-  margin-top: 40px;
-}
-
-.character-card {
-  background: rgba(15, 15, 20, 0.7); /* FONDO SEMI-TRANSPARENTE */
-  backdrop-filter: blur(10px); /* EFECTO GLASS */
-  border-radius: 8px;
-  padding: 0;
-  border: 1px solid rgba(255, 255, 255, 0.1); /* BORDE SUTIL */
-  transition: all 0.4s ease;
-  cursor: pointer;
-  overflow: hidden;
-  min-height: 300px;
-}
-
-.character-card:hover {
-  transform: translateY(-6px);
-  border-color: rgba(255, 255, 255, 0.3);
-  background: rgba(25, 25, 35, 0.8); /* MÁS OPACO AL HOVER */
-  box-shadow: 0 12px 30px rgba(0,0,0,0.4);
-}
-
-.card-media {
-  width: 100%;
-  height: 180px;
-  overflow: hidden;
-  background: transparent;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
-}
-
-.card-media img,
-.card-media video {
-  width: auto;
-  height: 100%;
-  max-width: 90%;
-  object-fit: contain;
-  transition: transform 0.4s ease;
-  background: transparent;
-}
-
-.character-card:hover .card-media img,
-.character-card:hover .card-media video {
-  transform: scale(1.05);
-}
-
-.card-info {
-  padding: 15px;
-  text-align: center;
-  background: transparent; /* FONDO TRANSPARENTE */
-}
-
-.card-info h3 {
-  color: #ffffff;
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin-bottom: 5px;
-  letter-spacing: 0.5px;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.8); /* SOMBRA PARA MEJOR LEGIBILIDAD */
-}
-
-.card-info span {
-  color: #cccccc;
-  font-size: 0.9rem;
-  font-weight: 400;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.8); /* SOMBRA PARA MEJOR LEGIBILIDAD */
-}
-
 /* SECTIONS ESPECÍFICAS */
 .resistance-section {
   position: relative;
@@ -284,7 +162,22 @@ a {
   border-bottom: 1px solid #1a1a1a;
 }
 
-.section-bg {
+/* FONDO PARA IMÁGENES (Resistencia y Xen) */
+.section-bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: brightness(0.3) contrast(1.1);
+  z-index: 1;
+}
+
+/* FONDO PARA VIDEOS (Hero y Combine) */
+.section-bg-video {
   position: absolute;
   top: 0;
   left: 0;
@@ -319,6 +212,82 @@ a {
   letter-spacing: 0.5px;
 }
 
+/* CARDS GRID MÁS COMPACTAS Y TRANSPARENTES */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  width: 100%;
+  margin-top: 40px;
+}
+
+.character-card {
+  background: rgba(15, 15, 20, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 8px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.4s ease;
+  cursor: pointer;
+  overflow: hidden;
+  min-height: 300px;
+}
+
+.character-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255, 255, 255, 0.3);
+  background: rgba(25, 25, 35, 0.8);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+}
+
+.card-media {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.card-media img,
+.card-media video {
+  width: auto;
+  height: 100%;
+  max-width: 90%;
+  object-fit: contain;
+  transition: transform 0.4s ease;
+  background: transparent;
+}
+
+.character-card:hover .card-media img,
+.character-card:hover .card-media video {
+  transform: scale(1.05);
+}
+
+.card-info {
+  padding: 15px;
+  text-align: center;
+  background: transparent;
+}
+
+.card-info h3 {
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+  letter-spacing: 0.5px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+}
+
+.card-info span {
+  color: #cccccc;
+  font-size: 0.9rem;
+  font-weight: 400;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+}
+
 .recruit-section {
   margin-top: 50px;
 }
@@ -345,8 +314,6 @@ a {
 }
 
 /* MODAL PROFESIONAL */
-
-
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -362,9 +329,10 @@ a {
 }
 
 .modal-container {
-  background: #1515153a;
+  background: rgba(21, 21, 21, 0.95);
+  backdrop-filter: blur(20px);
   border-radius: 8px;
-  border: 1px solid #2a2a2a3f;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   max-width: 900px;
   width: 100%;
   max-height: 90vh;
@@ -374,11 +342,11 @@ a {
 
 .modal-header {
   padding: 20px 25px;
-  border-bottom: 1px solid #2a2a2a1f;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #1a1a1a23;
+  background: rgba(26, 26, 26, 0.8);
 }
 
 .modal-header h3 {
@@ -412,57 +380,12 @@ a {
 
 .modal-body {
   padding: 25px;
-  background: #00000013;
 }
 
 .modal-content-wrapper {
   display: flex;
   gap: 25px;
   align-items: flex-start;
-}
-
-.modal-media {
-  width: 300px;
-  max-width: 45%;
-  border-radius: 6px;
-  object-fit: cover;
-  background: #00000013;
-  border: 1px solid #2a2a2a52;
-  flex-shrink: 0;
-}
-
-.modal-info-content {
-  flex: 1;
-  color: #e0e0e0;
-}
-
-.modal-info-content h3 {
-  color: #ffffff;
-  font-size: 1.3rem;
-  margin-bottom: 8px;
-  font-weight: 600;
-}
-
-/* MODAL PROFESIONAL */
-.modal-container {
-  background: rgba(21, 21, 21, 0.95); /* SEMI-TRANSPARENTE */
-  backdrop-filter: blur(20px); /* EFECTO GLASS FUERTE */
-  border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  max-width: 900px;
-  width: 100%;
-  max-height: 90vh;
-  overflow: auto;
-  box-shadow: 0 25px 50px rgba(0,0,0,0.8);
-}
-
-.modal-header {
-  padding: 20px 25px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: rgba(26, 26, 26, 0.8);
 }
 
 .modal-media {
@@ -476,6 +399,17 @@ a {
   padding: 10px;
 }
 
+.modal-info-content {
+  flex: 1;
+  color: #e0e0e0;
+}
+
+.modal-info-content h3 {
+  color: #ffffff;
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
 
 .game-info {
   color: #888888;
@@ -586,7 +520,6 @@ a {
     height: 120px;
   }
   
-  .section-title,
   .section-content h2 {
     font-size: 2.2rem;
   }
@@ -630,7 +563,6 @@ a {
     height: 90px;
   }
   
-  .section-title,
   .section-content h2 {
     font-size: 1.8rem;
   }
@@ -639,10 +571,33 @@ a {
     font-size: 1rem;
   }
   
-  .section-container,
   .resistance-section,
   .xen-section,
   .combine-section {
     padding: 100px 20px;
   }
+}
+/* Nueva sección Combine Wall */
+.combine-wall-section {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  padding: 120px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #1a1a1a;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.imperio-bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
 }
