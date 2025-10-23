@@ -1,0 +1,29 @@
+body {
+  background-color: #ffeef7; /* rosa pastel muy suave */
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#root {
+  background: white;
+  padding: 30px 50px;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  color: #444;
+}
+
+h1 {
+  color: #ff7ba5;
+  margin-bottom: 10px;
+}
+
+p {
+  color: #666;
+  font-size: 1.1em;
+}

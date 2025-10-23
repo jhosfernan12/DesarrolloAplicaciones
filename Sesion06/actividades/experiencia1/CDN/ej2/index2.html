@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React con CDN</title>
+    <link rel="stylesheet" href="../style.css" />
+
+    <!-- CDN de React -->
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+
+    <!-- CDN de ReactDOM -->
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+
+    <!-- CDN de Babel -->
+    <script
+      src="https://unpkg.com/@babel/standalone/babel.min.js"
+      crossorigin
+    ></script>
+  </head>
+
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+    class App extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = { contador: 0 };
+    }
+
+    incrementar = () => {
+        this.setState({ contador: this.state.contador + 1 });
+    };
+
+    render() {
+        return (
+        <div style={{ textAlign: "center", marginTop: "40px" }}>
+            <h1>Contador en React (CDN)</h1>
+            <p>Valor actual: {this.state.contador}</p>
+            <button onClick={this.incrementar}>Aumentar</button>
+        </div>
+        );
+    }
+    }
+
+    ReactDOM.render(<App />, document.getElementById("root"));
+
+    </script>
+  </body>
+</html>

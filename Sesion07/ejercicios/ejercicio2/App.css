@@ -1,0 +1,95 @@
+/* 🎨 Estilos globales */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #fff6fa;
+  color: #4a004f;
+}
+
+.App {
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 🌸 Header */
+.header {
+  background-color: #ffc7dc;
+  color: #4a004f;
+  text-align: center;
+  padding: 2.5rem 0;
+  box-shadow: 0 3px 10px rgba(255, 182, 193, 0.5);
+}
+
+.header h1 {
+  font-size: 2.2rem;
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.header h2 {
+  font-size: 1.1rem;
+  color: #80386a;
+  margin-top: 10px;
+}
+
+/* 🖼️ Imagen y Login/Profile */
+.login-container,
+.profile-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 75vh;
+  gap: 2.5rem;
+  text-align: left;
+}
+
+.profile-image {
+  width: 320px;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 25px;
+  box-shadow: 0 5px 20px rgba(255, 182, 193, 0.6);
+}
+
+
+.login-content,
+.profile-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+button {
+  background-color: #ffb6c1;
+  border: none;
+  padding: 0.9rem 1.8rem;
+  color: #4a004f;
+  border-radius: 10px;
+  margin-top: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #ffd3e0;
+  transform: scale(1.05);
+}
+
+/* 📍 Footer fijo */
+.footer {
+  background-color: #ffc7dc;
+  color: #4a004f;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  box-shadow: 0 -3px 10px rgba(255, 182, 193, 0.4);
+  font-weight: 500;
+}
